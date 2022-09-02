@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+:root {
+    --main-bg-color : rgba(17,16,22,255);
+    --form-bg-color : rgba(36,35,43,255);
+    --green-color : rgba(164,255,175,255);
+    --grey : rgba(228,227,232,255);
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Source Code Pro', monospace, sans-serif;
+}
+
+body {
+    position: relative;
+    /* background: linear-gradient(to right, #c9d6ff, #e2e2e2); */
+    background: var(--main-bg-color);
+    min-height: 100vh;
+    color: var(--grey);
+    /* background-color: rgb(10, 0, 27); */
+}
+
+.container {
+    display: block;
+    max-width: 800px;    
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-30%);
+    /* border: solid 1px black; */
+    background: var(--main-bg-color);
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+input {
+    border: none;
+}
+
+.formSubmit {
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: var(--form-bg-color);
+}
+
+.carLengthContainer {
+    display: flex;
+}
+
+.characterLength {
+    margin-left: auto;
+}
+
+.passHolderContainer {
+    background-color: var(--form-bg-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+}
+
+.passHolderContainer img {
+    width: 20px;
+    height: 100%;
+    color: var(--grey);
+    cursor: pointer;
+}
+.passHolder {
+    color: var(--grey);
+    /* text-align: center; */
+    outline: none;
+    background: none;
+    pointer-events: none;
+    font-size: 1.5rem;
+}
+/* .passHolderContainer::after {
+    position: absolute;
+    right: 10px;
+    content: '';
+    display: inline-block;
+    cursor: pointer;
+    background: url("/resources/copy.png") no-repeat center;
+    height: 20px;
+    width: 20px;
+} */
+.formLine {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.formLine label {
+    cursor: pointer;
+}
+
+.passStrengthContainer {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0.8rem;
+    background-color: rgb(110, 110, 110);
+}
+.passStrength {
+    margin-right: auto;
+}
+
+.passStrengthNote {
+    margin-right: 0.5rem;
+    text-transform: uppercase;
+}
+
+
+.dot {
+    width: 15px;
+    height: 25px;
+    border: solid var(--grey) 1px;
+    margin-left: 0.2rem;
+}
+
+.dot.light {
+    background-color: orange;
+}
+
+button {
+    width: 100%;
+    margin-top: 1rem;
+    padding: .4rem;
+    background: var(--green-color);
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border: var(--green-color) solid 1px;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background-color: transparent;
+    color: var(--green-color);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+
+input[type="range"] { 
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 0; /* iOS */
+}
+
+::-webkit-slider-runnable-track {
+    background: var(--main-bg-color);
+    /* height: 10px; */
+}
+
+/*
+ * 1. Set to 0 width and remove border for a slider without a thumb
+ * 2. Shadow is negative the full width of the input and has a spread 
+ *    of the width of the input.
+ */
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px; /* 1 */
+    height: 20px;
+    background: #fff;
+    box-shadow: -200px 0 0 200px var(--green-color); /* 2 */
+    border-radius: 25%;
+}
+
+::-moz-range-track {
+    height: 20px;
+    background: var(--main-bg-color);
+}
+
+::-moz-range-thumb {
+    background: #fff;
+    height: 20px;
+    width: 20px;
+    border: 3px solid #999;
+    border-radius: 25% !important;
+    box-shadow: -200px 0 0 200px var(--green-color);
+    box-sizing: border-box;
+}
+
+::-ms-fill-lower { 
+    background: var(--green-color);
+}
+
+::-ms-thumb { 
+    background: #fff;
+    border: 2px solid #999;
+    height: 40px;
+    width: 20px;
+    box-sizing: border-box;
+}
+
+::-ms-ticks-after { 
+    display: none; 
+}
+
+::-ms-ticks-before { 
+    display: none; 
+}
+
+::-ms-track { 
+    background: #ddd;
+    color: transparent;
+    height: 40px;
+    border: none;
+}
+
+::-ms-tooltip { 
+    display: none;
+}
+
+/* CUSTOM CHECKBOXES */
+input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: var(--form-bg-color);
+    /* Not removed via appearance */
+    margin-top: 0.2rem;
+    margin-right: 0.3rem;
+    font: inherit;
+    color: var(--green-color);
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid var(--green-color);
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color); 
+    
+    background-color: var(--green-color);
+  }
+
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }

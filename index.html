@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Générateur de mot de passe</h1>
+
+        <div class="passHolderContainer">
+            <input type="text" placeholder="P4$5W0rD!" class="passHolder">
+            <img src="/resources/icons8-copie-50.png" alt="icone copier">
+        </div>
+        <form class="formSubmit">
+            <div class="carLengthContainer">
+                <p>Longueur du mot de passe</p>
+                <p class="characterLength">0</p>
+            </div>
+
+            <input type="range" min="0" max="20" class="passLength">
+
+            <div class="formLine">
+                <input type="checkbox" name="uppercaseLetters" id="uppercaseLetters" class="checkOption">
+                <label for="uppercaseLetters">Inclure des lettres en majuscule</label>
+            </div>
+            <div class="formLine">
+                <input type="checkbox" name="lowercaseLetters" id="lowercaseLetters" class="checkOption">
+                <label for="lowercaseLetters">Inclure des lettres en minuscule</label>
+            </div>
+            <div class="formLine">
+                <input type="checkbox" name="includeNumbers" id="includeNumbers" class="checkOption">
+                <label for="includeNumbers">Inclure des chiffres</label>
+            </div>
+            <div class="formLine">
+                <input type="checkbox" name="includeSymbols" id="includeSymbols" class="checkOption">
+                <label for="includeSymbols">Inclure des caractères spéciaux</label>
+            </div>
+
+            <div class="passStrengthContainer">
+                <p class="passStrength">Compléxité</p>
+                <span class="passStrengthNote"></span>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+
+            <button type="submit"></button>
+        </form>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
